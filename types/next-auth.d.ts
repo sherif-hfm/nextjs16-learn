@@ -5,16 +5,26 @@ declare module "next-auth" {
     user: {
       id: string;
       name?: string | null;
-      email?: string | null;
-      image?: string | null;
+      email?: string | null;      
       provider?: string;
       id_token?: string;
       access_token?: string;
       // Keycloak claims
-      FullName?: string;
+      DateOfBirth?: string | null;
+      IdentityType?: string | null;
+      DirCode?: string | null;
+      FamilyName?: string;
+      DirDesc?: string;
+      UserCode?: string;
+      DateOfBirthHJ?: string;
+      DateOfBirthHJ?: string;
       MobileNumber?: string;
-      role?: string[];
+      FullName?: string;
+      ThirdName?: string;
+      UserType?: string;
       IdentityNo?: string;
+      FatherName?: string;
+      role?: string[];      
     };
   }
 
@@ -30,9 +40,21 @@ declare module "next-auth/jwt" {
     id_token?: string;
     access_token?: string;
     // Keycloak claims
-    FullName?: string;
+    DateOfBirth?: string | null;
+    IdentityType?: string | null;
+    DirCode?: string | null;
+    FamilyName?: string;
+    DirDesc?: string;
+    UserCode?: string;
+    DateOfBirthHJ?: string;
+    DateOfBirthHJ?: string;
     MobileNumber?: string;
-    role?: string[];
+    FullName?: string;
+    ThirdName?: string;
+    UserType?: string;
     IdentityNo?: string;
+    FatherName?: string;
+    role?: string[];
+    error?: string;
   }
 }
