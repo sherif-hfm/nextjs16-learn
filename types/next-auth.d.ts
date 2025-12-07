@@ -9,7 +9,12 @@ declare module "next-auth" {
       image?: string | null;
       provider?: string;
       id_token?: string;
-      access_token?: string;  
+      access_token?: string;
+      // Keycloak claims
+      FullName?: string;
+      MobileNumber?: string;
+      role?: string[];
+      IdentityNo?: string;
     };
   }
 
@@ -23,5 +28,11 @@ declare module "next-auth/jwt" {
     id: string;
     provider?: string;
     id_token?: string;
+    access_token?: string;
+    // Keycloak claims
+    FullName?: string;
+    MobileNumber?: string;
+    role?: string[];
+    IdentityNo?: string;
   }
 }

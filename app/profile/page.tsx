@@ -62,6 +62,26 @@ export default function ProfilePage() {
             <p className="text-gray-700">
               <span className="font-semibold">Email:</span> {session.user?.email}
             </p>
+            {session.user?.FullName && (
+              <p className="text-gray-700">
+                <span className="font-semibold">Full Name:</span> {session.user.FullName}
+              </p>
+            )}
+            {session.user?.MobileNumber && (
+              <p className="text-gray-700">
+                <span className="font-semibold">Mobile Number:</span> {session.user.MobileNumber}
+              </p>
+            )}
+            {session.user?.IdentityNo && (
+              <p className="text-gray-700">
+                <span className="font-semibold">Identity No:</span> {session.user.IdentityNo}
+              </p>
+            )}
+            {session.user?.role && session.user.role.length > 0 && (
+              <p className="text-gray-700">
+                <span className="font-semibold">Roles:</span> {session.user.role.join(", ")}
+              </p>
+            )}
           </div>
         </div>
         <div className="space-y-3">
