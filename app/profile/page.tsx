@@ -40,6 +40,7 @@ export default function ProfilePage() {
   const getValue = async () => {
     const value = await getValueAction("123");
     console.log(value);
+    //alert(value);
   };
   if (status === "loading") {
     return (
@@ -106,7 +107,7 @@ export default function ProfilePage() {
             onClick={getValue}
             className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
           >
-            Get Value
+            Get Value from Server Action
           </button>
         </div>
       </div>
