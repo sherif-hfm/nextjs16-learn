@@ -1,5 +1,6 @@
 "use client";
 
+import { getValueAction } from "@/types/actions";
 import { useSession, signOut,signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
@@ -36,6 +37,10 @@ export default function ProfilePage() {
     }
   };
 
+  const getValue = async () => {
+    const value = await getValueAction("123");
+    console.log(value);
+  };
   if (status === "loading") {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -96,6 +101,12 @@ export default function ProfilePage() {
             className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
           >
             Sign Out
+          </button>
+          <button
+            onClick={getValue}
+            className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+          >
+            Get Value
           </button>
         </div>
       </div>
